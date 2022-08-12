@@ -13,7 +13,7 @@ function App() {
     localStorage.setItem("count",`${count}`);
   }
   useEffect(() => {
-    if (typeof (id) != 'undefined' && id != null && id != "" ) {
+    if (typeof (id) !== 'undefined' && id !== null && id !== "" ) {
       document.cookie = id;
       setToken(id);
       console.log(token);

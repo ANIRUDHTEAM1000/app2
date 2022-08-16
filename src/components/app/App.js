@@ -49,7 +49,7 @@ function App() {
         // increment count value of local storage ( count is number of redirections to loginpage )
         localStorage.setItem("count",`${parseInt(localStorage.getItem("count"))+1}`)
         // before redirecton checks if the login page is up else redirects to down page
-        let isUp = await getStatus("https://ssologinapp.vercel.app/101");
+        let isUp = await getStatus("https://ssologinapp.vercelbjbjb/");
         if(isUp){
           alert(isUp);
           alert(localStorage.getItem("count"));

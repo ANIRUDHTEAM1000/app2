@@ -1,24 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './components/app/App';
 import reportWebVitals from './reportWebVitals';
-import SuccessPage from './SuccessPage'
-import Error from './Error'
+import SuccessPage from './components/success/SuccessPage'
+import Error from './components/error/Error'
 import {
   BrowserRouter,
-  Routes,
   Route,
   Switch,
 } from "react-router-dom";
+import { PageDown } from './components/pagedown/PageDown';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-  <Switch>
-          <Route path="/error" exact children={<Error />} />      
-          <Route path="/" exact children={<App />} />
-          <Route path="/success" exact children={<SuccessPage />} />
-          <Route path="/:id" exact children={<App />} />      
+  <Switch>  
+  <Route path="/success" exact children={<SuccessPage />} />
+  <Route path="/error" exact children={<Error />} />  
+  <Route path="/down" exact children={<PageDown />} />          
+  <Route path="/" exact children={<App />} />
+  <Route path="/:id" exact children={<App />} />      
    </Switch>
 </BrowserRouter>
 );

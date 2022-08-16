@@ -41,7 +41,7 @@ function App() {
       setToken(id);
       console.log(token);
       localStorage.setItem("count",`${0}`);
-      redirect(`http://${window.location.host}/success`)
+      redirect(`https://${window.location.host}/success`)
     } 
     else {
       // if count is less than 3 try to redirect to login else redirect to error page
@@ -53,12 +53,12 @@ function App() {
         if(isUp){
           redirect(`https://ssologinapp.vercel.app/cookie/${window.location.host}`);
         }else{
-          redirect(`http://${window.location.host}/down`)
+          redirect(`https://${window.location.host}/down`)
         }
       }
       else if(parseInt(localStorage.getItem("count"))>=3){
         localStorage.setItem("count",`${0}`);
-        redirect(`http://${window.location.host}/error`)
+        redirect(`https://${window.location.host}/error`)
       }
 
     }

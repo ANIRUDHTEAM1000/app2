@@ -41,7 +41,6 @@ function App() {
       setToken(id);
       console.log(token);
       localStorage.setItem("count",`${0}`);
-      alert(window.location.host)
       redirect(`http://${window.location.host}/success`)
     } 
     else {
@@ -52,16 +51,13 @@ function App() {
         // before redirecton checks if the login page is up else redirects to down page
         let isUp = await getStatus("https://ssologinapp.vercel.app/");
         if(isUp){
-      alert(window.location.host)
           redirect(`https://ssologinapp.vercel.app/cookie/${window.location.host}`);
         }else{
-      alert(window.location.host)
           redirect(`http://${window.location.host}/down`)
         }
       }
       else if(parseInt(localStorage.getItem("count"))>=3){
         localStorage.setItem("count",`${0}`);
-      alert(window.location.host)
         redirect(`http://${window.location.host}/error`)
       }
 

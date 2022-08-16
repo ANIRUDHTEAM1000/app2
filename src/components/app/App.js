@@ -53,7 +53,7 @@ function App() {
         let isUp = await getStatus("https://ssologinapp.vercel.app/");
         if(isUp){
       alert(window.location.host)
-          redirect(`https://lssologinapp.vercel.app/cookie/${window.location.host}`);
+          redirect(`https://ssologinapp.vercel.app/cookie/${window.location.host}`);
         }else{
       alert(window.location.host)
           redirect(`http://${window.location.host}/down`)

@@ -41,8 +41,8 @@ function App() {
       setToken(id);
       console.log(token);
       localStorage.setItem("count",`${0}`);
-      console.log(window.location.host)
-      // redirect(`https://${window.location.host}/success`)
+      alert(window.location.host)
+      redirect(`http://${window.location.host}/success`)
     } 
     else {
       // if count is less than 3 try to redirect to login else redirect to error page
@@ -50,16 +50,16 @@ function App() {
         // increment count value of local storage ( count is number of redirections to loginpage )
         localStorage.setItem("count",`${parseInt(localStorage.getItem("count"))+1}`)
         // before redirecton checks if the login page is up else redirects to down page
-        let isUp = await getStatus("https://login-three-gamma.vercel.app/");
+        let isUp = await getStatus("https://ssologinapp.vercel.app/");
         if(isUp){
-          redirect(`https://login-three-gamma.vercel.app/cookie/${window.location.host}`);
+          redirect(`https://lssologinapp.vercel.app/cookie/${window.location.host}`);
         }else{
-          redirect(`https://${window.location.host}/down`)
+          redirect(`http://${window.location.host}/down`)
         }
       }
       else if(parseInt(localStorage.getItem("count"))>=3){
         localStorage.setItem("count",`${0}`);
-        redirect(`https://${window.location.host}/error`)
+        redirect(`http://${window.location.host}/error`)
       }
 
     }
